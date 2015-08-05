@@ -54,6 +54,7 @@ namespace OsDevKit
 
              p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.RedirectStandardError = true;
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 
@@ -70,7 +71,7 @@ namespace OsDevKit
                 return;
             }
 
-            var x =  p.StandardOutput.ReadToEnd();
+            var x =  p.StandardOutput.ReadToEnd() + "\n" + p.StandardError.ReadToEnd();
             var ret = "";
             string opt = "-w -m32 -Wall -O -fstrength-reduce  -finline-functions -fomit-frame-pointer -nostdinc -fno-builtin -I " + args.Split(' ').Last() +" -c -fno-strict-aliasing -fno-common -fno-stack-protector";
             foreach (var i in x.Replace("\r\n", "\n").Split('\n'))
