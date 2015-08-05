@@ -12,6 +12,7 @@ namespace OsDevKit
     {
         public static ProjectFile CurrentProjectFile { get; set; }
         public static string CurrentProjectFilePath { get; set; }
+        public static string OutPut = "";
 
         public static void Save()
         {

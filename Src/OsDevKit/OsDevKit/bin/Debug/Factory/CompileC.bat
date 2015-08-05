@@ -1,5 +1,5 @@
 setlocal
-set opt=-w -m32 -Wall -O -fstrength-reduce  -finline-functions -fomit-frame-pointer -nostdinc -fno-builtin -I%3 -c -fno-strict-aliasing -fno-common -fno-stack-protector
+set opt=-w -m32 -Wall -O -fstrength-reduce  -finline-functions -fomit-frame-pointer -nostdinc -fno-builtin -I %3 -c -fno-strict-aliasing -fno-common -fno-stack-protector
 cd Factory
 cd ..
 cd Tools

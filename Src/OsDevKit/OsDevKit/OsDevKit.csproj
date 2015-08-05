@@ -83,6 +83,12 @@
     <Compile Include="UI\Editor.Designer.cs">
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Output.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Output.Designer.cs">
+      <DependentUpon>Output.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ProjectView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Editor.resx">
       <DependentUpon>Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Output.resx">
+      <DependentUpon>Output.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProjectView.resx">
       <DependentUpon>ProjectView.cs</DependentUpon>
