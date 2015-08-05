@@ -1,0 +1,17 @@
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\OsDevKit.exe.config
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.csprojResolveAssemblyReference.cache
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.MainForm.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.Properties.Resources.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Editor.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.csproj.GenerateResource.Cache
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\OsDevKit.exe
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\OsDevKit.pdb
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\FastColoredTextBox.dll
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\FastColoredTextBox.xml
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.exe
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.pdb
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.ProjectView.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Dialogs.New_Project.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Dialogs.AskDlg.resources
