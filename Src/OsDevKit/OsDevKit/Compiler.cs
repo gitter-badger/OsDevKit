@@ -13,12 +13,16 @@ namespace OsDevKit
 
         public static void Compile()
         {
+            if(Global.CurrentProjectFile == null)
+            {
+                return;
+            }
             Log = "";
             foreach (var i in Global.CurrentProjectFile.Files)
             {
                 if(i.EndsWith(".c"))
                 {
-                    StartProcces("Factory\\CompileC.bat", "" + Path.GetFullPath( Path.Combine(Global.CurrentProjectFilePath, "files" ,i)) + " " + new FileInfo(i).Name.Split('.').First(), "Factory");
+                    StartProcces("Factory\\CompileC.bat", "" + Path.GetFullPath( Path.Combine(Global.CurrentProjectFilePath, "files" ,i)) + " " + new FileInfo(i).Name.Split('.').First() + " " + Path.GetFullPath(Path.Combine(Global.CurrentProjectFilePath,"files", "include")) , "Factory");
                 }
                 if (i.EndsWith(".asm"))
                 {
@@ -28,7 +32,10 @@ namespace OsDevKit
             }
             StartProcces("Factory\\Link.bat","", Path.GetFullPath("Factory"));
             StartProcces("Factory\\BuildBootImage.bat", "", Path.GetFullPath("Factory"));
-            StartProcces("Factory\\Qemu.bat", "", Path.GetFullPath("Factory"));
+            var img = Path.Combine(Global.CurrentProjectFilePath, "Bin", "Boot.img");
+            File.Delete(img);
+            File.Copy("Factory\\Boot.img",img);
+            StartProcces("Factory\\Qemu.bat", img, Path.GetFullPath("Factory"));
 
         }
 
@@ -45,6 +52,7 @@ namespace OsDevKit
              p.StartInfo.UseShellExecute = true;
             //p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 
             p.StartInfo.FileName = name;
             p.StartInfo.Arguments = args;

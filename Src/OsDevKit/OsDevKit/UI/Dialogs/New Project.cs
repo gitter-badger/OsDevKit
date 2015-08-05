@@ -45,8 +45,11 @@ namespace OsDevKit.UI.Dialogs
 
             foreach (var i in File.ReadAllLines(Path.Combine(d.FullName, "index.dat")))
             {
-                if(i != "")
+                if (i != "")
+                {
                     z.Files.Add(i);
+
+                }
             }
 
             File.WriteAllText(Path.Combine(d.FullName, name + ".proj"), JsonConvert.SerializeObject(z));
@@ -54,6 +57,8 @@ namespace OsDevKit.UI.Dialogs
             Global.CurrentProjectFilePath = d.FullName;
             this.Close();
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -63,7 +68,7 @@ namespace OsDevKit.UI.Dialogs
                 {
                     if (listBox1.SelectedIndex != -1)
                     {
-                        CreateProject(textBox1.Text,textBox2.Text, 0);
+                        CreateProject(textBox1.Text,textBox2.Text, listBox1.SelectedIndex);
                     }
                     else
                     {

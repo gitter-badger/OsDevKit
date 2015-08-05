@@ -33,7 +33,7 @@ namespace OsDevKit.UI
 
 
             e.ChangedRange.SetStyle(Maroon, "\"(.*)\"");
-            e.ChangedRange.SetStyle(Maroon, "#include (.*)");
+            e.ChangedRange.SetStyle(Maroon, "#(.*)");
             e.ChangedRange.SetStyle(Green, "//(.*)");
 
             e.ChangedRange.SetStyle(Blue, "auto|break|case|char|const|continue|default|do|double|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while");
@@ -71,8 +71,14 @@ namespace OsDevKit.UI
         {
             if (!String.IsNullOrEmpty(FileName))
             {
-                fastColoredTextBox1.Text = File.ReadAllText(Path.Combine(Global.CurrentProjectFilePath + "\\files\\" + FileName));
-                this.Text = "Editor - " + FileName;
+                try {
+                    fastColoredTextBox1.Text = File.ReadAllText(Path.Combine(Global.CurrentProjectFilePath, "files", FileName));
+                    this.Text = "Editor - " + FileName;
+                }
+                catch(Exception ee)
+                {
+
+                }
             }
         }
     }
