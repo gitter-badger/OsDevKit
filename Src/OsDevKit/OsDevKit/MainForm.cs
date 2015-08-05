@@ -75,5 +75,22 @@ namespace OsDevKit
             f.MdiParent = this;
             f.Show();
         }
+
+        private async void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var f = new Debug();
+            f.MdiParent = this;
+            f.Show();
+            Global.SerialPipe.StartPipe();
+            
+
+        }
+
+        private void debugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new Debug();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

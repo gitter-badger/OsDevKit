@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OsDevKit.Debugger;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,8 @@ namespace OsDevKit
         public static ProjectFile CurrentProjectFile { get; set; }
         public static string CurrentProjectFilePath { get; set; }
         public static string OutPut = "";
+        public static string DebugOutPut = "";
+        public static Pipe SerialPipe = new Pipe();
 
         public static void Save()
         {
