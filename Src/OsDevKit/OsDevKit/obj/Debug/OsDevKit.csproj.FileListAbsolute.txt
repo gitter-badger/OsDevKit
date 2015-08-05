@@ -15,3 +15,4 @@ C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKi
 C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.ProjectView.resources
 C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Dialogs.New_Project.resources
 C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Dialogs.AskDlg.resources
+C:\Users\Myvar\Documents\GitHub\OsDevKit\Src\OsDevKit\OsDevKit\obj\Debug\OsDevKit.UI.Output.resources

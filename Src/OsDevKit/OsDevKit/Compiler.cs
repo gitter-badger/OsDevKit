@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OsDevKit
 {
@@ -17,6 +18,7 @@ namespace OsDevKit
             {
                 return;
             }
+            Global.OutPut = "";
             Log = "";
             foreach (var i in Global.CurrentProjectFile.Files)
             {
@@ -35,11 +37,12 @@ namespace OsDevKit
             var img = Path.Combine(Global.CurrentProjectFilePath, "Bin", "Boot.img");
             File.Delete(img);
             File.Copy("Factory\\Boot.img",img);
-            StartProcces("Factory\\Qemu.bat", img, Path.GetFullPath("Factory"));
+            Application.DoEvents();
+            StartProcces("Factory\\Qemu.bat", img, Path.GetFullPath("Factory"),false);
 
         }
 
-        public static void StartProcces(string name, string args, string path)
+        public static void StartProcces(string name, string args, string path, bool waitfor = true)
         {
 
 
@@ -49,15 +52,37 @@ namespace OsDevKit
 
 
 
-             p.StartInfo.UseShellExecute = true;
-            //p.StartInfo.RedirectStandardOutput = true;
+             p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
 
             p.StartInfo.FileName = name;
             p.StartInfo.Arguments = args;
+
             p.Start();
-            p.WaitForExit();
+            if (waitfor)
+            {
+                p.WaitForExit();
+            }
+            else
+            {
+                return;
+            }
+
+            var x =  p.StandardOutput.ReadToEnd();
+            var ret = "";
+            string opt = "-w -m32 -Wall -O -fstrength-reduce  -finline-functions -fomit-frame-pointer -nostdinc -fno-builtin -I " + args.Split(' ').Last() +" -c -fno-strict-aliasing -fno-common -fno-stack-protector";
+            foreach (var i in x.Replace("\r\n", "\n").Split('\n'))
+            {
+                var l = i.Split('>').Last();
+                if (!l.StartsWith("cd ") && !l.StartsWith("del ") && !l.StartsWith("set") && !string.IsNullOrEmpty(l))
+                {
+                    ret += l.Replace(opt ,"{opt}") + Environment.NewLine;
+                }
+            }
+           
+            Global.OutPut += "----------------------------------------\n" + ret + "\n\n";
         }
     }
 }

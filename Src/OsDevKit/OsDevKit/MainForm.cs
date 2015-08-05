@@ -33,6 +33,10 @@ namespace OsDevKit
             var f = new ProjectView();
             f.MdiParent = this;
             f.Show();
+
+            var f1 = new Output();
+            f1.MdiParent = this;
+            f1.Show();
         }
 
         private void projectViewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +67,13 @@ namespace OsDevKit
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Compiler.Compile();
+        }
+
+        private void outputToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new Output();
+            f.MdiParent = this;
+            f.Show();
         }
     }
 }

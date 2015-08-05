@@ -1,3 +1,3 @@
 cd Factory
 cd qemu
-qemu.exe -L . -fda %1
+qemu.exe -serial file:serial.log -L . -fda %1
