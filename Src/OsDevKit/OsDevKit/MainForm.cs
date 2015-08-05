@@ -51,6 +51,7 @@ namespace OsDevKit
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Project File (*.proj)|*.proj";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Global.CurrentProjectFile = JsonConvert.DeserializeObject<ProjectFile>(File.ReadAllText(dlg.FileName));

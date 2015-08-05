@@ -39,7 +39,7 @@ namespace OsDevKit.UI.Dialogs
         {
             var d = new DirectoryInfo(path + "\\" + name);
             Directory.CreateDirectory(d.FullName );
-            ZipFile.ExtractToDirectory("./Templates/0.zip", d.FullName);
+            ZipFile.ExtractToDirectory("./Templates/" + Template + ".zip", d.FullName);
             var z = new ProjectFile();
             z.Name = name;
 
