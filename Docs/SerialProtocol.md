@@ -1,5 +1,5 @@
-# Serial Protical
-The goal of the serial proticall is to allow the following interations between ide and os:
+# Serial Protocol
+The goal of the serial protocol is to allow the following interactions between the IDE and the OS:
 * Break points
 * Bebug console
 * Dumps
@@ -7,8 +7,8 @@ The goal of the serial proticall is to allow the following interations between i
   * call stack
   * etc
   
-# The design goal
-To make an fully expandable data pipe line.
+# Design Goal
+To make a fully expandable data pipeline.
 
 # Packets
 All packets have the following:
@@ -25,11 +25,11 @@ All packets have the following:
 | Data       | Char[]                   |
 
 ###### Debug Console Read
-packets Order:
+Packet order:
 
-OS -> Ide (send with state of 0) Ask for read line (wait for responce)
+OS -> IDE (send with state of 0) Ask for read line (wait for response).
 
-Ide -> OS (send with state of 1) Sends string, os continus
+IDE -> OS (send with state of 1) Sends string, OS continues.
 
 
 | Field      | Description              |
