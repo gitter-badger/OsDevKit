@@ -81,8 +81,15 @@ namespace OsDevKit
             var f = new Debug();
             f.MdiParent = this;
             f.Show();
-            Global.SerialPipe.StartPipe();
-            
+            try
+            {
+                Global.SerialPipe.StartPipe();
+            }
+            catch(Exception ee)
+            {
+                Global.SerialPipe.StopPipe();
+                Global.DebugOutPut += "\n\n-------------------------------------------------------\n\n Gebugging pipe closed\n";
+            }
 
         }
 

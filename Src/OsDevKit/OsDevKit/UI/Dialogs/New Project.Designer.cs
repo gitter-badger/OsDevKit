@@ -41,8 +41,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
-            "Blank OS (C)",
-            "Basic OS (C)"});
+            "Blank OS (C) - Blank os with only kmain.",
+            "Basic OS (C) - Basic os with data types and basic console write.",
+            "Debugger OS (C) - Basic OS but with OsKit Debugger suport(alpha)"});
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(507, 212);

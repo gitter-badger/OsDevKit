@@ -205,11 +205,11 @@ namespace OsDevKit.UI
             catch (Exception ee)
             {
 
-                Global.Save();
-                buffer = null;
+                
 
             }
-
+            Global.Save();
+            buffer = null;
 
         }
 

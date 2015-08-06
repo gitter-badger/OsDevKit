@@ -16,8 +16,7 @@ namespace OsDevKit.Debugger
         bool Run = true;
         public async void StartPipe()
         {
-            try
-            {
+            
                 var message = "";
                 var server = "127.0.0.1";
                 Int32 port = 8080;
@@ -41,27 +40,30 @@ namespace OsDevKit.Debugger
 
                 while (Run)
                 {
-                    
+
+
+                try
+                {
+
+
                     Int32 bytes = stream.Read(data, 0, data.Length);
                     responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                    Global.DebugOutPut += responseData;
-                   Application.DoEvents();
+                    Global.DebugOutPut = responseData + Global.DebugOutPut;
+                    Application.DoEvents();
+                }
+                catch(Exception ee)
+                {
+                    break;
+                }  
 
                 }
                 // Close everything.
                 stream.Close();
                 client.Close();
-            }
-            catch (ArgumentNullException e)
-            {
-                Debug.WriteLine("ArgumentNullException: {0}", e);
-            }
-            catch (SocketException e)
-            {
-                Debug.WriteLine("SocketException: {0}", e);
-            }
+            Global.SerialPipe.StopPipe();
+            Global.DebugOutPut = "\n\n-------------------------------------------------------\n\n Gebugging pipe closed\n" + Global.DebugOutPut;
 
-           
+
         }
 
 
